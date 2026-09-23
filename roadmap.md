@@ -1,0 +1,3 @@
+- [x] Apply the supplied name, hero, professional biography, terminology, and content corrections.
+- [x] Refine the specified section colors, spacing, audience cards, contact, and footer without rebuilding the page.
+- [x] Verify desktop/mobile layout, links, menu, and FAQ.

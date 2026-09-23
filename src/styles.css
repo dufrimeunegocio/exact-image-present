@@ -210,10 +210,16 @@
 /* Soft rose + teal gradient washes */
 .wash-hero {
   background:
-    radial-gradient(60% 55% at 12% 12%, color-mix(in oklab, var(--teal) 24%, transparent), transparent 70%),
-    radial-gradient(55% 50% at 88% 22%, color-mix(in oklab, var(--rose) 22%, transparent), transparent 70%),
-    radial-gradient(70% 60% at 70% 95%, color-mix(in oklab, var(--rose-soft) 45%, transparent), transparent 75%),
+    radial-gradient(26% 40% at 91% 85%, color-mix(in oklab, var(--rose-soft) 45%, transparent), transparent 78%),
     var(--background);
+}
+
+.wash-about {
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--rose-soft) 42%, var(--background)),
+    color-mix(in oklab, var(--teal-soft) 42%, var(--background))
+  );
 }
 
 .wash-rose {

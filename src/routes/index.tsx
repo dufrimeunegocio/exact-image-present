@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Reveal } from "@/components/Reveal";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoAsset from "@/assets/karen-keller-logo.png.asset.json";
 import karenAsset from "@/assets/karen.jpg.asset.json";
 
 const WHATSAPP = "https://wa.me/5548974008889";
@@ -18,17 +18,17 @@ const INSTAGRAM = "https://instagram.com/karen_keller_neuropsico";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Clínica Alegremente | Karen Keller, Neuropsicopedagoga" },
+      { title: "Karen Keller | Neuropsicopedagoga" },
       {
         name: "description",
         content:
-          "Clínica Alegremente — atendimento em neuropsicopedagogia para crianças, adolescentes, adultos e idosos, com avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica.",
+          "Karen Keller — atendimento em neuropsicopedagogia para crianças, adolescentes, adultos e idosos, com avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia neuropsicopedagógica.",
       },
-      { property: "og:title", content: "Clínica Alegremente | Karen Keller, Neuropsicopedagoga" },
+      { property: "og:title", content: "Karen Keller | Neuropsicopedagoga" },
       {
         property: "og:description",
         content:
-          "Avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica com a neuropsicopedagoga Karen Keller.",
+          "Avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia neuropsicopedagógica com Karen Keller.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -45,27 +45,6 @@ const NAV = [
   { label: "Atendimento", href: "#atendimento" },
 ];
 
-const FORMACAO = [
-  "Pedagogia",
-  "Pós-graduação em Neuropsicopedagogia",
-  "Neurociências",
-  "Neuroanatomia",
-  "Autismo — avaliação e intervenção",
-  "TDAH",
-  "Educação especial e inclusão",
-  "Terapia complementar",
-  "Especialização em Dislexia",
-  "Psiquiatria infantil",
-  "Neuropsicologia",
-  "Cursando doutorado em Naturopatia e Terapia Ortomolecular",
-  "Proprietária da Clínica Alegremente",
-  'Autora da coleção "Ler: super poder"',
-  "Autora do Protocolo de Avaliação Funcional da Atenção Auditiva (PROAFA)",
-  "Autora do Protocolo de Avaliação Funcional da Atenção Visual (PROAFA-V)",
-  "Criadora do Protocolo ROTA",
-  "Assessoria de educação especial e capacitação de professores",
-];
-
 const SERVICOS = [
   {
     title: "Avaliação neuropsicopedagógica",
@@ -80,7 +59,7 @@ const SERVICOS = [
     text: "Trabalho direcionado ao desenvolvimento e fortalecimento de habilidades cognitivas de acordo com as necessidades individuais.",
   },
   {
-    title: "Terapia psicopedagógica",
+    title: "Terapia Neuropsicopedagógica",
     text: "Atendimento voltado às dificuldades relacionadas ao processo de aprendizagem, buscando estratégias individualizadas para favorecer o desenvolvimento.",
   },
 ];
@@ -152,7 +131,7 @@ const MAPEAMENTO = [
   },
   {
     q: "O que pode avaliar?",
-    a: "Pode fornecer informações complementares sobre aspectos como nível de ativação cerebral, atenção, concentração, estado de alerta, processamento de informações, autorregulação e padrões de funcionamento de diferentes áreas do cérebro.",
+    a: "O exame avalia aspectos como nível de ativação cerebral, atenção, concentração, estado de alerta, ansiedade, hiperatividade, depressão, processamento de informações, autorregulação e padrões de funcionamento de diferentes áreas do cérebro. Mostra padrões que podem gerar possíveis transtornos.",
   },
   {
     q: "Por que é importante?",
@@ -227,8 +206,8 @@ const FAQ = [
     answer: "A avaliação envolve etapas como anamnese, vínculo e escuta, aplicação de testes acadêmicos, avaliação das funções executivas, avaliação socioemocional, observação/entrevista escolar e devolutiva para a família.",
   },
   {
-    question: "Quais são os serviços oferecidos pela Clínica Alegremente?",
-    answer: "A Clínica Alegremente oferece avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica.",
+    question: "Quais são os serviços oferecidos por Karen Keller?",
+    answer: "Karen Keller oferece avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia neuropsicopedagógica.",
   },
 ];
 
@@ -274,8 +253,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#inicio" aria-label="Clínica Alegremente">
-          <img src={logoAsset.url} alt="Clínica Alegremente" className="h-9 w-auto sm:h-11" />
+        <a href="#inicio" aria-label="Karen Keller — início">
+          <img src={logoAsset.url} alt="Karen Keller — neuropsicopedagogia" className="h-10 w-auto max-w-[180px] object-contain sm:h-12 sm:max-w-[230px]" />
         </a>
         <nav className="hidden gap-9 md:flex">
           {NAV.map((item) => (
@@ -300,7 +279,7 @@ function Header() {
       {open ? (
         <div className="fixed inset-0 z-50 h-dvh overflow-y-auto bg-background md:hidden">
           <div className="flex items-center justify-between px-5 py-4">
-            <img src={logoAsset.url} alt="Clínica Alegremente" className="h-9 w-auto" />
+            <img src={logoAsset.url} alt="Karen Keller — neuropsicopedagogia" className="h-10 w-auto max-w-[180px] object-contain" />
             <Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Fechar menu">
               <X className="size-6" />
             </Button>
@@ -329,14 +308,9 @@ function Index() {
       <Header />
 
       {/* HERO */}
-      <section id="inicio" className="wash-hero px-5 pb-10 pt-7 sm:px-8 sm:pb-20 sm:pt-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-[140px_minmax(0,1fr)] items-center gap-x-5 gap-y-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-x-16 md:gap-y-0">
-          <Reveal className="col-start-2 row-start-1 md:col-start-1 md:self-end">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-rose">Karen Keller</p>
-            <p className="mt-2 font-display text-xl text-foreground sm:text-2xl">Clínica Alegremente</p>
-            <span className="rule-duo mt-4 block h-0.5 w-12 rounded-full" />
-          </Reveal>
-          <Reveal delay={80} className="col-span-2 row-start-2 md:col-span-1 md:col-start-1 md:self-start md:pt-5">
+      <section id="inicio" className="wash-hero px-5 pb-10 pt-10 sm:px-8 sm:pb-20 sm:pt-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-16">
+          <Reveal delay={80}>
             <h1 className="max-w-xl font-display text-[2.55rem] leading-[1.06] text-foreground sm:text-5xl lg:text-[4rem]">
               Cuidar da aprendizagem é compreender cada pessoa de forma única.
             </h1>
@@ -348,11 +322,11 @@ function Index() {
               <CtaButton />
             </div>
           </Reveal>
-          <Reveal delay={120} className="col-start-1 row-start-1 md:col-start-2 md:row-span-2 md:row-start-1 md:justify-self-end">
-            <div className="relative w-[140px] md:w-[min(36vw,440px)]">
+          <Reveal delay={120} className="mx-auto w-full max-w-72 md:mr-0 md:max-w-[440px]">
+            <div className="relative w-full">
               <img
                 src={karenAsset.url}
-                alt="Karen Keller, neuropsicopedagoga da Clínica Alegremente"
+                alt="Karen Keller, neuropsicopedagoga"
                 className="blob-hero aspect-[4/5] w-full object-cover object-center shadow-soft md:aspect-[4/4.6]"
               />
             </div>
@@ -361,9 +335,9 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="wash-teal px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[260px_minmax(0,1fr)] md:gap-16">
-          <Reveal className="mx-auto w-52 md:sticky md:top-28 md:w-full">
+      <section id="sobre" className="wash-about px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] md:gap-14">
+          <Reveal className="mx-auto w-60 md:sticky md:top-28 md:w-full">
             <img src={karenAsset.url} alt="Karen Keller" loading="lazy" className="blob-soft aspect-[4/5] w-full object-cover object-center shadow-soft" />
             <span className="rule-duo mx-auto mt-5 block h-0.5 w-16 rounded-full" />
           </Reveal>
@@ -371,14 +345,7 @@ function Index() {
           <SectionTitle>Quem sou eu?</SectionTitle>
           <Reveal delay={80}>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              Karen Keller é pedagoga e pós-graduada em Neuropsicopedagogia, com formação
-              complementar em Neurociências, Neuroanatomia, Autismo — avaliação e intervenção, TDAH,
-              Educação Especial e Inclusão, Terapia Complementar, Dislexia, Psiquiatria Infantil e
-              Neuropsicologia.
-            </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Atua há mais de 15 anos com crianças, adolescentes e adultos e também realiza
-              assessoria para municípios na adaptação escolar e capacitação de professores.
+              KAREN KELLER, Pedagoga, pós graduada em Neuropsicopedagoga, Neurociências, Neuroanatomia, Autismo avaliação e intervenção, TDAH, Educação especial e inclusão, Terapia complementar. Especialização em Dislexia, Psiquiatria infantil, Neuropsicologia. Cursando doutorado em Naturopatia e Terapia Ortomolecular. autora da coleção "Ler; super poder", Protocolo de Avaliação Funcional da Atenção Auditiva (PROAFA) e Protocolo de Avaliação Funcional da Atenção Visual (PROAFA-V) e criadora do Protocolo ROTA. Assessoria de educação especial e capacitação de professores.
             </p>
           </Reveal>
 
@@ -395,28 +362,6 @@ function Index() {
             </div>
           </Reveal>
 
-          <Reveal delay={180}>
-            <Accordion type="single" collapsible className="mt-8">
-              <AccordionItem value="formacao" className="border-b-0">
-                <AccordionTrigger className="text-sm text-teal hover:no-underline">
-                  Conheça minha formação
-                </AccordionTrigger>
-                <AccordionContent>
-                  <ul className="grid gap-2 pt-2 sm:grid-cols-2">
-                    {FORMACAO.map((item) => (
-                      <li
-                        key={item}
-                        className="flex gap-2 text-sm leading-relaxed text-muted-foreground"
-                      >
-                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-rose" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </Reveal>
           </div>
         </div>
       </section>
@@ -438,11 +383,17 @@ function Index() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={120} className="mt-12 border-l-2 border-teal bg-teal-soft/25 px-6 py-6 sm:px-8">
+            <h3 className="text-2xl text-foreground">Intervenção com Neurofeedback</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              O neurofeedback é um treinamento em que sensores registram a atividade cerebral enquanto você realiza atividades interativas. As respostas aparecem na tela em tempo real, criando oportunidades para praticar a autorregulação. É um recurso no tratamento de TDAH, autismo, deficiência intelectual, Dislexia, Discalculia, ansiedade, depressão, estresse pós-traumático e dificuldades do sono. A indicação é individual e pode fazer parte de um acompanhamento mais amplo.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       {/* AVALIAÇÃO */}
-      <section className="wash-rose px-5 py-20 sm:px-8 sm:py-28">
+      <section className="bg-background px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-3xl">
           <SectionTitle>Avaliação Neuropsicopedagógica</SectionTitle>
           <Reveal delay={80}>
@@ -476,7 +427,7 @@ function Index() {
             </p>
             <div className="mt-8 rounded-2xl border-l-2 border-teal bg-background p-6">
               <p className="leading-relaxed text-foreground">
-                A avaliação pode contribuir para a investigação de condições como TDAH, dislexia,
+                A avaliação pode contribuir para a investigação de condições como TDAH, TEA, deficiência intelectual, dislexia,
                 discalculia, dificuldades de aprendizagem e alterações nas funções executivas, entre
                 outras situações que impactam o processo de aprender.
               </p>
@@ -529,21 +480,21 @@ function Index() {
       </section>
 
       {/* MAPEAMENTO CEREBRAL */}
-      <section className="wash-teal px-5 py-20 sm:px-8 sm:py-28">
+      <section className="bg-teal px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <SectionTitle>Mapeamento Cerebral</SectionTitle>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {MAPEAMENTO.map((m, i) => (
-              <Reveal key={m.q} delay={i * 80} className="rounded-lg border-t-2 border-rose-soft bg-background p-7 shadow-soft transition-transform duration-300 hover:-translate-y-1">
-                <h3 className="text-xl text-rose">{m.q}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.a}</p>
+              <Reveal key={m.q} delay={i * 80} className="rounded-lg border-t-2 border-teal-soft bg-background p-7 shadow-soft transition-transform duration-300 hover:-translate-y-1">
+                <h3 className="text-xl text-foreground">{m.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-foreground">{m.a}</p>
               </Reveal>
             ))}
           </div>
           <Reveal delay={140}>
-            <div className="mt-8 rounded-2xl border border-gold/40 bg-background p-6">
+            <div className="mt-8 rounded-lg border border-gold bg-foreground p-6">
               <p className="text-xs uppercase tracking-[0.2em] text-gold">Importante</p>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
+              <p className="mt-3 leading-relaxed text-background">
                 O mapeamento cerebral não deve ser utilizado isoladamente para diagnosticar TDAH,
                 autismo, ansiedade, dislexia ou outros transtornos. Seus resultados devem ser
                 analisados em conjunto com a história clínica, sintomas, observações e demais
@@ -605,7 +556,7 @@ function Index() {
               <Reveal
                 key={p}
                 delay={i * 70}
-                className={`rounded-lg px-4 py-8 font-display text-xl text-foreground ${i % 2 ? "bg-rose-soft/35" : "bg-teal-soft/40"}`}
+                className={`rounded-lg px-4 py-8 font-display text-xl text-foreground ${i % 2 ? "bg-teal/35" : "bg-teal-soft/70"}`}
               >
                 {p}
               </Reveal>
@@ -621,11 +572,11 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="wash-rose px-5 py-20 sm:px-8 sm:py-28">
+      <section id="faq" className="bg-rose-soft/35 px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-3xl">
           <SectionTitle>Perguntas frequentes</SectionTitle>
           <Reveal delay={80}>
-            <Accordion type="single" collapsible className="mt-10 divide-y divide-border border-y border-border">
+            <Accordion type="single" collapsible className="mt-10 divide-y divide-rose/35 border-y border-rose/35">
               {FAQ.map((item, i) => (
                 <AccordionItem key={item.question} value={`faq-${i}`} className="border-none px-1">
                   <AccordionTrigger className="py-5 text-left font-display text-lg text-foreground hover:text-rose hover:no-underline sm:text-xl">
@@ -642,16 +593,16 @@ function Index() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="px-5 pb-20 sm:px-8 sm:pb-28">
-        <Reveal className="wash-teal mx-auto max-w-4xl rounded-lg px-6 py-16 text-center sm:px-16">
+      <section className="bg-teal px-5 py-20 sm:px-8 sm:py-28">
+        <Reveal className="mx-auto max-w-4xl py-6 text-center sm:py-10">
           <h2 className="mx-auto max-w-2xl text-3xl leading-tight text-foreground sm:text-4xl">
             Vamos compreender melhor suas necessidades?
           </h2>
-          <p className="mx-auto mt-4 max-w-md leading-relaxed text-muted-foreground">
-            Entre em contato para saber mais sobre os atendimentos da Clínica Alegremente.
+          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-foreground">
+            Entre em contato para saber mais sobre os atendimentos e entender qual serviço pode ser adequado para você ou sua família.
           </p>
           <div className="mt-8">
-            <CtaButton />
+            <CtaButton className="bg-background hover:bg-background/85" />
           </div>
         </Reveal>
       </section>
@@ -661,8 +612,7 @@ function Index() {
         <div className="mx-auto max-w-3xl">
           <SectionTitle>Entre em contato</SectionTitle>
           <Reveal delay={80} className="mt-8 rounded-3xl bg-card p-8 shadow-soft">
-            <p className="font-display text-2xl text-foreground">Clínica Alegremente</p>
-            <p className="mt-1 text-sm text-muted-foreground">Karen Keller</p>
+            <p className="font-display text-2xl text-foreground">Karen Keller</p>
             <dl className="mt-8 grid gap-6 sm:grid-cols-2">
               <div>
                 <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
@@ -703,13 +653,11 @@ function Index() {
       </section>
 
       {/* RODAPÉ */}
-      <footer className="wash-teal border-t border-border px-5 py-12 sm:px-8">
-        <div className="mx-auto grid max-w-5xl gap-10 sm:grid-cols-3">
+      <footer className="bg-teal-soft/30 border-t border-border px-5 py-8 sm:px-8">
+        <div className="mx-auto grid max-w-5xl gap-7 sm:grid-cols-3 sm:gap-10">
           <div>
-            <img src={logoAsset.url} alt="Clínica Alegremente" className="h-11 w-auto" />
-            <p className="mt-5 font-display text-lg text-foreground">Karen Keller</p>
+            <p className="font-display text-xl text-foreground">Karen Keller</p>
             <p className="text-sm text-muted-foreground">Neuropsicopedagoga</p>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">Compreender a aprendizagem é também compreender cada pessoa.</p>
           </div>
           <nav aria-label="Links do rodapé" className="flex flex-col items-start gap-2 text-sm">
             <p className="mb-2 font-medium text-foreground">Links</p>
@@ -724,8 +672,8 @@ function Index() {
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">Instagram</a>
           </div>
         </div>
-        <div className="mx-auto mt-12 flex max-w-5xl flex-col gap-2 border-t border-border pt-5 text-xs text-muted-foreground sm:flex-row sm:justify-between">
-          <p>Clínica Alegremente © 2026</p>
+        <div className="mx-auto mt-7 flex max-w-5xl flex-col gap-2 border-t border-border pt-4 text-xs text-muted-foreground sm:flex-row sm:justify-between">
+          <p>Karen Keller © 2026</p>
           <p>
             criado com ❤️ por{" "}
             <a
