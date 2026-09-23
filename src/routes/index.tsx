@@ -71,6 +71,7 @@ const INVESTIGADO = [
   "Leitura",
   "Escrita",
   "Raciocínio lógico-matemático",
+  "Percepção",
   "Funções executivas",
   "Organização",
   "Planejamento",
@@ -221,7 +222,7 @@ function WhatsAppIcon({ className = "size-5" }: { className?: string }) {
 
 function CtaButton({ className = "" }: { className?: string }) {
   return (
-    <Button asChild className={`h-12 rounded-full bg-teal px-7 text-sm font-medium text-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal/80 ${className}`}>
+    <Button asChild className={`h-12 rounded-full bg-teal px-7 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal/80 ${className}`}>
       <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
         <WhatsAppIcon /> Agendar avaliação
       </a>
@@ -336,8 +337,8 @@ function Index() {
 
       {/* SOBRE */}
       <section id="sobre" className="wash-about px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] md:gap-14">
-          <Reveal className="mx-auto w-60 md:sticky md:top-28 md:w-full">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] md:gap-14">
+          <Reveal className="mx-auto w-60 md:w-full">
             <img src={karenAsset.url} alt="Karen Keller" loading="lazy" className="blob-soft aspect-[4/5] w-full object-cover object-center shadow-soft" />
             <span className="rule-duo mx-auto mt-5 block h-0.5 w-16 rounded-full" />
           </Reveal>
@@ -393,10 +394,10 @@ function Index() {
       </section>
 
       {/* AVALIAÇÃO */}
-      <section className="bg-background px-5 py-20 sm:px-8 sm:py-28">
+      <section className="bg-rose-soft px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-3xl">
-          <SectionTitle>Avaliação Neuropsicopedagógica</SectionTitle>
-          <Reveal delay={80}>
+          <Reveal className="rounded-lg bg-card p-7 shadow-soft sm:p-10">
+            <h2 className="text-3xl leading-tight text-foreground sm:text-4xl">Avaliação Neuropsicopedagógica</h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
               A Avaliação Neuropsicopedagógica é um processo investigativo que busca compreender
               como a criança, o adolescente ou o adulto aprende, identificando suas potencialidades
@@ -404,15 +405,19 @@ function Index() {
               raciocínio lógico-matemático, percepção, organização, planejamento, controle inibitório
               e demais funções cognitivas envolvidas na aprendizagem.
             </p>
+            <p className="mt-6 leading-relaxed text-muted-foreground">
+              O objetivo não é apenas identificar dificuldades, mas compreender quais processos
+              cognitivos podem estar interferindo no desempenho acadêmico e funcional.
+            </p>
           </Reveal>
 
-          <Reveal delay={120}>
-            <h3 className="mt-12 text-xl text-foreground">O que pode ser investigado?</h3>
+          <Reveal delay={120} className="mt-5 rounded-lg bg-card p-7 shadow-soft sm:p-10">
+            <h3 className="text-2xl text-foreground">O que pode ser investigado?</h3>
             <ul className="mt-5 flex flex-wrap gap-2.5">
               {INVESTIGADO.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full bg-background px-4 py-2 text-sm text-foreground shadow-soft"
+                  className="rounded-full bg-rose-soft/40 px-4 py-2 text-sm text-foreground"
                 >
                   {item}
                 </li>
@@ -420,18 +425,10 @@ function Index() {
             </ul>
           </Reveal>
 
-          <Reveal delay={160}>
-            <p className="mt-10 leading-relaxed text-muted-foreground">
-              O objetivo não é apenas identificar dificuldades, mas compreender quais processos
-              cognitivos podem estar interferindo no desempenho acadêmico e funcional.
+          <Reveal delay={160} className="mt-5 rounded-lg bg-card p-7 shadow-soft sm:p-10">
+            <p className="leading-relaxed text-foreground">
+              A avaliação pode contribuir para a investigação de condições como TDAH, dislexia, discalculia, dificuldades de aprendizagem, alterações nas funções executivas, TEA, deficiência intelectual, entre outras situações que impactam o processo de aprender.
             </p>
-            <div className="mt-8 rounded-2xl border-l-2 border-teal bg-background p-6">
-              <p className="leading-relaxed text-foreground">
-                A avaliação pode contribuir para a investigação de condições como TDAH, TEA, deficiência intelectual, dislexia,
-                discalculia, dificuldades de aprendizagem e alterações nas funções executivas, entre
-                outras situações que impactam o processo de aprender.
-              </p>
-            </div>
           </Reveal>
         </div>
       </section>
@@ -480,21 +477,21 @@ function Index() {
       </section>
 
       {/* MAPEAMENTO CEREBRAL */}
-      <section className="bg-teal px-5 py-20 sm:px-8 sm:py-28">
+      <section className="bg-sky-soft px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <SectionTitle>Mapeamento Cerebral</SectionTitle>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {MAPEAMENTO.map((m, i) => (
-              <Reveal key={m.q} delay={i * 80} className="rounded-lg border-t-2 border-teal-soft bg-background p-7 shadow-soft transition-transform duration-300 hover:-translate-y-1">
+              <Reveal key={m.q} delay={i * 80} className="rounded-lg bg-card p-7 shadow-soft transition-transform duration-300 hover:-translate-y-1">
                 <h3 className="text-xl text-foreground">{m.q}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground">{m.a}</p>
               </Reveal>
             ))}
           </div>
           <Reveal delay={140}>
-            <div className="mt-8 rounded-lg border border-gold bg-foreground p-6">
+            <div className="mt-8 rounded-lg border border-gold bg-card p-6 shadow-soft">
               <p className="text-xs uppercase tracking-[0.2em] text-gold">Importante</p>
-              <p className="mt-3 leading-relaxed text-background">
+              <p className="mt-3 leading-relaxed text-foreground">
                 O mapeamento cerebral não deve ser utilizado isoladamente para diagnosticar TDAH,
                 autismo, ansiedade, dislexia ou outros transtornos. Seus resultados devem ser
                 analisados em conjunto com a história clínica, sintomas, observações e demais
@@ -593,22 +590,22 @@ function Index() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-teal px-5 py-20 sm:px-8 sm:py-28">
-        <Reveal className="mx-auto max-w-4xl py-6 text-center sm:py-10">
+      <section className="bg-background px-5 py-20 sm:px-8 sm:py-28">
+        <Reveal className="mx-auto max-w-4xl rounded-3xl bg-sky-soft px-6 py-12 text-center sm:px-12 sm:py-16">
           <h2 className="mx-auto max-w-2xl text-3xl leading-tight text-foreground sm:text-4xl">
             Vamos compreender melhor suas necessidades?
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-foreground">
-            Entre em contato para saber mais sobre os atendimentos e entender qual serviço pode ser adequado para você ou sua família.
+            Entre em contato para saber mais sobre os atendimentos e entender qual serviço pode ser adequado para você.
           </p>
           <div className="mt-8">
-            <CtaButton className="bg-background hover:bg-background/85" />
+            <CtaButton />
           </div>
         </Reveal>
       </section>
 
       {/* CONTATO */}
-      <section id="contato" className="px-5 pb-20 sm:px-8 sm:pb-28">
+      <section id="contato" className="bg-background px-5 pb-20 pt-4 sm:px-8 sm:pb-28 sm:pt-6">
         <div className="mx-auto max-w-3xl">
           <SectionTitle>Entre em contato</SectionTitle>
           <Reveal delay={80} className="mt-8 rounded-3xl bg-card p-8 shadow-soft">
@@ -653,34 +650,30 @@ function Index() {
       </section>
 
       {/* RODAPÉ */}
-      <footer className="bg-teal-soft/30 border-t border-border px-5 py-8 sm:px-8">
-        <div className="mx-auto grid max-w-5xl gap-7 sm:grid-cols-3 sm:gap-10">
+      <footer className="border-t border-border bg-background px-5 py-7 sm:px-8">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center">
           <div>
             <p className="font-display text-xl text-foreground">Karen Keller</p>
-            <p className="text-sm text-muted-foreground">Neuropsicopedagoga</p>
+            <p className="text-xs text-muted-foreground">Neuropsicopedagoga</p>
           </div>
-          <nav aria-label="Links do rodapé" className="flex flex-col items-start gap-2 text-sm">
-            <p className="mb-2 font-medium text-foreground">Links</p>
+          <nav aria-label="Links do rodapé" className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs">
             {[...NAV.slice(0, 4), { label: "FAQ", href: "#faq" }, { label: "Contato", href: "#contato" }].map((item) => (
               <a key={item.href} href={item.href} className="text-muted-foreground transition-colors hover:text-rose">{item.label}</a>
             ))}
           </nav>
-          <div className="flex flex-col items-start gap-2 text-sm">
-            <p className="mb-2 font-medium text-foreground">Contato</p>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs">
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">WhatsApp</a>
             <a href="mailto:karen.keller78@gmail.com" className="text-muted-foreground transition-colors hover:text-teal">E-mail</a>
             <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">Instagram</a>
           </div>
-        </div>
-        <div className="mx-auto mt-7 flex max-w-5xl flex-col gap-2 border-t border-border pt-4 text-xs text-muted-foreground sm:flex-row sm:justify-between">
-          <p>Karen Keller © 2026</p>
+          <p className="text-xs text-muted-foreground">Karen Keller © 2026</p>
           <p>
-            criado com ❤️ por{" "}
+            <span className="text-xs text-muted-foreground">criado com ❤️ por{" "}</span>
             <a
               href="https://dufrimeunegocio.com.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-teal"
+              className="text-xs text-teal"
             >
               @Dufrimeunegocio
             </a>
