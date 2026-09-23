@@ -650,7 +650,7 @@ function Index() {
       </section>
 
       {/* RODAPÉ */}
-      <footer className="border-t border-border bg-background px-5 py-7 sm:px-8">
+      <footer className="border-t border-border bg-background px-5 pb-24 pt-7 sm:px-8 lg:py-7">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center">
           <div className="lg:hidden">
             <img src={logoAsset.url} alt="Karen Keller — neuropsicopedagogia" className="mx-auto h-11 w-auto max-w-[190px] object-contain sm:h-12 sm:max-w-[220px]" />
