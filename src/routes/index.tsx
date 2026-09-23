@@ -310,20 +310,20 @@ function Index() {
 
       {/* HERO */}
       <section id="inicio" className="wash-hero px-5 pb-10 pt-10 sm:px-8 sm:pb-20 sm:pt-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-16">
-          <Reveal delay={80}>
-            <h1 className="max-w-xl font-display text-[2.55rem] leading-[1.06] text-foreground sm:text-5xl lg:text-[4rem]">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
+          <Reveal delay={80} className="max-lg:text-center">
+            <h1 className="max-w-xl font-display text-[2.55rem] leading-[1.06] text-foreground max-lg:mx-auto sm:text-5xl lg:text-[4rem]">
               Cuidar da aprendizagem é compreender cada pessoa de forma única.
             </h1>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground max-lg:mx-auto sm:text-base">
               Avaliação neuropsicopedagógica, mapeamento cerebral e reabilitação cognitiva para crianças, adolescentes e adultos.
             </p>
-            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-foreground"><span className="text-rose" aria-hidden="true">✦</span> Mais de 15 anos de experiência</p>
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-foreground max-lg:justify-center"><span className="text-rose" aria-hidden="true">✦</span> Mais de 15 anos de experiência</p>
             <div className="mt-5 sm:mt-7">
               <CtaButton />
             </div>
           </Reveal>
-          <Reveal delay={120} className="mx-auto w-full max-w-72 md:mr-0 md:max-w-[440px]">
+          <Reveal delay={120} className="mx-auto w-full max-w-72 md:max-w-[440px] lg:mr-0">
             <div className="relative w-full">
               <img
                 src={karenAsset.url}
@@ -337,12 +337,12 @@ function Index() {
 
       {/* SOBRE */}
       <section id="sobre" className="wash-about px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] md:gap-14">
-          <Reveal className="mx-auto w-60 md:w-full">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] lg:gap-14">
+          <Reveal className="order-2 mx-auto w-60 sm:w-72 lg:order-1 lg:w-full">
             <img src={karenAsset.url} alt="Karen Keller" loading="lazy" className="blob-soft aspect-[4/5] w-full object-cover object-center shadow-soft" />
             <span className="rule-duo mx-auto mt-5 block h-0.5 w-16 rounded-full" />
           </Reveal>
-          <div>
+          <div className="order-1 lg:order-2">
           <SectionTitle>Quem sou eu?</SectionTitle>
           <Reveal delay={80}>
             <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -607,7 +607,7 @@ function Index() {
       {/* CONTATO */}
       <section id="contato" className="bg-background px-5 pb-20 pt-4 sm:px-8 sm:pb-28 sm:pt-6">
         <div className="mx-auto max-w-3xl">
-          <SectionTitle>Entre em contato</SectionTitle>
+          <div className="max-lg:text-center"><SectionTitle>Entre em contato</SectionTitle></div>
           <Reveal delay={80} className="mt-8 rounded-3xl bg-card p-8 shadow-soft">
             <p className="font-display text-2xl text-foreground">Karen Keller</p>
             <dl className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -650,25 +650,29 @@ function Index() {
       </section>
 
       {/* RODAPÉ */}
-      <footer className="border-t border-border bg-background px-5 py-7 sm:px-8">
+      <footer className="border-t border-border bg-background px-5 pb-24 pt-7 sm:px-8 lg:py-7">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center">
-          <div>
+          <div className="lg:hidden">
+            <img src={logoAsset.url} alt="Karen Keller — neuropsicopedagogia" className="mx-auto h-11 w-auto max-w-[190px] object-contain sm:h-12 sm:max-w-[220px]" />
+            <p className="text-xs text-muted-foreground">Neuropsicopedagoga</p>
+          </div>
+          <div className="hidden lg:block">
             <p className="font-display text-xl text-foreground">Karen Keller</p>
             <p className="text-xs text-muted-foreground">Neuropsicopedagoga</p>
           </div>
-          <nav aria-label="Links do rodapé" className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs">
+          <nav aria-label="Links do rodapé" className="hidden flex-wrap justify-center gap-x-5 gap-y-1 text-xs lg:flex">
             {[...NAV.slice(0, 4), { label: "FAQ", href: "#faq" }, { label: "Contato", href: "#contato" }].map((item) => (
               <a key={item.href} href={item.href} className="text-muted-foreground transition-colors hover:text-rose">{item.label}</a>
             ))}
           </nav>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs">
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">WhatsApp</a>
-            <a href="mailto:karen.keller78@gmail.com" className="text-muted-foreground transition-colors hover:text-teal">E-mail</a>
-            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">Instagram</a>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-identity-blue transition-colors hover:text-teal lg:text-muted-foreground">WhatsApp</a>
+            <a href="mailto:karen.keller78@gmail.com" className="text-identity-blue transition-colors hover:text-teal lg:text-muted-foreground">E-mail</a>
+            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-identity-blue transition-colors hover:text-teal lg:text-muted-foreground">Instagram</a>
           </div>
           <p className="text-xs text-muted-foreground">Karen Keller © 2026</p>
           <p>
-            <span className="text-xs text-muted-foreground">criado com ❤️ por{" "}</span>
+            <span className="text-xs text-muted-foreground">criado com <span aria-hidden="true" className="text-sm text-footer-heart lg:hidden">♡</span><span aria-hidden="true" className="hidden lg:inline">❤️</span> por{" "}</span>
             <a
               href="https://dufrimeunegocio.com.br/"
               target="_blank"
