@@ -86,6 +86,7 @@
   --rose-soft: oklch(0.908 0.039 50.8);
   --teal: oklch(0.74 0.077 182.8);
   --teal-soft: oklch(0.872 0.049 185);
+  --sky-soft: oklch(0.89 0.045 220);
   --gold: oklch(0.818 0.105 90.7);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Jost", system-ui, sans-serif;
@@ -156,6 +157,7 @@
   --color-rose-soft: var(--rose-soft);
   --color-teal: var(--teal);
   --color-teal-soft: var(--teal-soft);
+  --color-sky-soft: var(--sky-soft);
   --color-gold: var(--gold);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
