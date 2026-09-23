@@ -288,17 +288,17 @@ function Header() {
             </a>
           ))}
         </nav>
-        <Button variant="ghost" size="icon"
+        {!open && <Button variant="ghost" size="icon"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-label="Abrir menu"
           className="text-foreground md:hidden"
         >
           <Menu className="size-6" />
-        </Button>
+        </Button>}
       </div>
 
       {open ? (
-        <div className="fixed inset-0 z-50 bg-background md:hidden">
+        <div className="fixed inset-0 z-50 h-dvh overflow-y-auto bg-background md:hidden">
           <div className="flex items-center justify-between px-5 py-4">
             <img src={logoAsset.url} alt="Clínica Alegremente" className="h-9 w-auto" />
             <Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Fechar menu">
@@ -739,8 +739,8 @@ function Index() {
           </p>
         </div>
       </footer>
-      <div className="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-2 sm:bottom-6 sm:right-6">
-        <span className="rounded-lg border border-border bg-background px-3 py-2 text-xs text-foreground shadow-soft">Como posso te ajudar?</span>
+      <div className="fixed bottom-4 right-4 z-40 flex items-center gap-2 sm:bottom-6 sm:right-6">
+        <span className="max-w-32 rounded-lg border border-border bg-background px-2 py-1.5 text-center text-[11px] leading-tight text-foreground shadow-soft sm:max-w-none sm:px-3 sm:py-2 sm:text-xs">Como posso te ajudar?</span>
         <Button asChild size="icon" className="size-12 rounded-full bg-teal text-foreground shadow-soft transition-transform duration-300 hover:-translate-y-1 hover:bg-teal/80" title="Conversar pelo WhatsApp">
           <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
             <WhatsAppIcon className="size-6" />
