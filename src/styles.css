@@ -197,3 +197,41 @@
     transition: none;
   }
 }
+
+/* Organic photo shapes */
+.blob-hero {
+  border-radius: 58% 42% 46% 54% / 46% 40% 60% 54%;
+}
+
+.blob-soft {
+  border-radius: 48% 52% 42% 58% / 54% 46% 54% 46%;
+}
+
+/* Soft rose + teal gradient washes */
+.wash-hero {
+  background:
+    radial-gradient(60% 55% at 12% 12%, color-mix(in oklab, var(--teal) 24%, transparent), transparent 70%),
+    radial-gradient(55% 50% at 88% 22%, color-mix(in oklab, var(--rose) 22%, transparent), transparent 70%),
+    radial-gradient(70% 60% at 70% 95%, color-mix(in oklab, var(--rose-soft) 45%, transparent), transparent 75%),
+    var(--background);
+}
+
+.wash-rose {
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--rose-soft) 40%, var(--background)),
+    color-mix(in oklab, var(--teal-soft) 22%, var(--background))
+  );
+}
+
+.wash-teal {
+  background: linear-gradient(
+    200deg,
+    color-mix(in oklab, var(--teal-soft) 35%, var(--background)),
+    color-mix(in oklab, var(--rose-soft) 25%, var(--background))
+  );
+}
+
+.rule-duo {
+  background: linear-gradient(90deg, var(--rose), var(--teal));
+}
