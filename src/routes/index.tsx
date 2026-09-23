@@ -602,7 +602,7 @@ function Index() {
             Entre em contato para saber mais sobre os atendimentos e entender qual serviço pode ser adequado para você ou sua família.
           </p>
           <div className="mt-8">
-            <CtaButton />
+            <CtaButton className="bg-background hover:bg-background/85" />
           </div>
         </Reveal>
       </section>
