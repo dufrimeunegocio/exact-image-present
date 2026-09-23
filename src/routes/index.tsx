@@ -254,7 +254,7 @@ function Header() {
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           className="text-foreground md:hidden"
         >
-          {open ? <Menu className="size-6 opacity-0" /> : <Menu className="size-6" />}
+          <Menu className="size-6" />
         </button>
       </div>
 
