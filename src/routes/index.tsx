@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -17,18 +18,20 @@ const INSTAGRAM = "https://instagram.com/karen_keller_neuropsico";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Clínica Alegremente | Neuropsicopedagogia em Garopaba" },
+      { title: "Clínica Alegremente | Karen Keller, Neuropsicopedagoga" },
       {
         name: "description",
         content:
           "Clínica Alegremente — atendimento em neuropsicopedagogia para crianças, adolescentes, adultos e idosos, com avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica.",
       },
-      { property: "og:title", content: "Clínica Alegremente | Neuropsicopedagogia em Garopaba" },
+      { property: "og:title", content: "Clínica Alegremente | Karen Keller, Neuropsicopedagoga" },
       {
         property: "og:description",
         content:
-          "Avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica em Garopaba, com a neuropsicopedagoga Karen Keller.",
+          "Avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica com a neuropsicopedagoga Karen Keller.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -198,16 +201,52 @@ const SITUACOES = [
 
 const PUBLICO = ["Crianças", "Adolescentes", "Adultos", "Idosos"];
 
+const FAQ = [
+  {
+    question: "Quem pode fazer uma avaliação neuropsicopedagógica?",
+    answer: "A avaliação pode ser realizada por crianças, adolescentes e adultos, de acordo com as necessidades apresentadas.",
+  },
+  {
+    question: "O que é a avaliação neuropsicopedagógica?",
+    answer: "É um processo investigativo que busca compreender como a pessoa aprende, identificando potencialidades e possíveis dificuldades relacionadas às funções cognitivas envolvidas na aprendizagem.",
+  },
+  {
+    question: "O que é o mapeamento cerebral?",
+    answer: "É um exame que analisa a atividade elétrica cerebral e pode fornecer informações complementares sobre o funcionamento do cérebro.",
+  },
+  {
+    question: "O mapeamento cerebral diagnostica TDAH ou outros transtornos?",
+    answer: "Não. O mapeamento cerebral não deve ser utilizado isoladamente para diagnosticar TDAH, autismo, ansiedade, dislexia ou outros transtornos. Os resultados devem ser analisados em conjunto com a história clínica, sintomas e demais avaliações.",
+  },
+  {
+    question: "Quais situações podem ser trabalhadas na Neuropsicopedagogia?",
+    answer: "Podem ser trabalhadas dificuldades relacionadas à atenção, memória, funções executivas, leitura, escrita, raciocínio matemático, organização, planejamento e outras dificuldades relacionadas à aprendizagem.",
+  },
+  {
+    question: "Como funciona a avaliação?",
+    answer: "A avaliação envolve etapas como anamnese, vínculo e escuta, aplicação de testes acadêmicos, avaliação das funções executivas, avaliação socioemocional, observação/entrevista escolar e devolutiva para a família.",
+  },
+  {
+    question: "Quais são os serviços oferecidos pela Clínica Alegremente?",
+    answer: "A Clínica Alegremente oferece avaliação neuropsicopedagógica, mapeamento cerebral, reabilitação cognitiva e terapia psicopedagógica.",
+  },
+];
+
+function WhatsAppIcon({ className = "size-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.45 0 .07 5.38.07 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62a11.94 11.94 0 0 0 5.87 1.5h.01c6.6 0 11.98-5.37 11.98-11.97 0-3.2-1.25-6.21-3.52-8.43ZM12.06 21.86a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.24-.38a9.9 9.9 0 0 1-1.52-5.25c0-5.46 4.44-9.9 9.91-9.9 2.65 0 5.14 1.03 7 2.91a9.83 9.83 0 0 1 2.9 7.01c0 5.46-4.44 9.9-9.92 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z" />
+    </svg>
+  );
+}
+
 function CtaButton({ className = "" }: { className?: string }) {
   return (
-    <a
-      href={WHATSAPP}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-full bg-teal px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-rose ${className}`}
-    >
-      Agendar avaliação
-    </a>
+    <Button asChild className={`h-12 rounded-full bg-teal px-7 text-sm font-medium text-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal/80 ${className}`}>
+      <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+        <WhatsAppIcon /> Agendar avaliação
+      </a>
+    </Button>
   );
 }
 
@@ -249,22 +288,22 @@ function Header() {
             </a>
           ))}
         </nav>
-        <button
+        <Button variant="ghost" size="icon"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           className="text-foreground md:hidden"
         >
           <Menu className="size-6" />
-        </button>
+        </Button>
       </div>
 
       {open ? (
         <div className="fixed inset-0 z-50 bg-background md:hidden">
           <div className="flex items-center justify-between px-5 py-4">
             <img src={logoAsset.url} alt="Clínica Alegremente" className="h-9 w-auto" />
-            <button onClick={() => setOpen(false)} aria-label="Fechar menu">
+            <Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Fechar menu">
               <X className="size-6" />
-            </button>
+            </Button>
           </div>
           <nav className="flex flex-col gap-2 px-5 pt-6">
             {NAV.map((item) => (
@@ -290,24 +329,31 @@ function Index() {
       <Header />
 
       {/* HERO */}
-      <section id="inicio" className="px-5 pb-20 pt-12 sm:px-8 sm:pb-28 sm:pt-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
-          <Reveal className="order-2 md:order-1">
-            <h1 className="max-w-xl font-display text-4xl leading-[1.15] text-foreground sm:text-5xl lg:text-[3.5rem]">
+      <section id="inicio" className="wash-hero px-5 pb-10 pt-7 sm:px-8 sm:pb-20 sm:pt-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-[140px_minmax(0,1fr)] items-center gap-x-5 gap-y-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-x-16 md:gap-y-0">
+          <Reveal className="col-start-2 row-start-1 md:col-start-1 md:self-end">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-rose">Karen Keller</p>
+            <p className="mt-2 font-display text-xl text-foreground sm:text-2xl">Clínica Alegremente</p>
+            <span className="rule-duo mt-4 block h-0.5 w-12 rounded-full" />
+          </Reveal>
+          <Reveal delay={80} className="col-span-2 row-start-2 md:col-span-1 md:col-start-1 md:self-start md:pt-5">
+            <h1 className="max-w-xl font-display text-[2.55rem] leading-[1.06] text-foreground sm:text-5xl lg:text-[4rem]">
               Cuidar da aprendizagem é compreender cada pessoa de forma única.
             </h1>
-            <div className="mt-10">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Avaliação neuropsicopedagógica, mapeamento cerebral e reabilitação cognitiva para crianças, adolescentes e adultos.
+            </p>
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-foreground"><span className="text-rose" aria-hidden="true">✦</span> Mais de 15 anos de experiência</p>
+            <div className="mt-5 sm:mt-7">
               <CtaButton />
             </div>
           </Reveal>
-          <Reveal delay={120} className="order-1 md:order-2">
-            <div className="relative mx-auto max-w-sm md:max-w-none">
-              <div className="absolute -left-5 -top-5 hidden size-40 rounded-full bg-teal-soft/50 blur-2xl md:block" />
-              <div className="absolute -bottom-6 -right-4 hidden size-32 rounded-full bg-rose-soft/60 blur-2xl md:block" />
+          <Reveal delay={120} className="col-start-1 row-start-1 md:col-start-2 md:row-span-2 md:row-start-1 md:justify-self-end">
+            <div className="relative w-[140px] md:w-[min(36vw,440px)]">
               <img
                 src={karenAsset.url}
                 alt="Karen Keller, neuropsicopedagoga da Clínica Alegremente"
-                className="relative w-full rounded-[2rem] object-cover shadow-soft"
+                className="blob-hero aspect-[4/5] w-full object-cover object-center shadow-soft md:aspect-[4/4.6]"
               />
             </div>
           </Reveal>
@@ -315,8 +361,13 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="bg-teal-soft/25 px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section id="sobre" className="wash-teal px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[260px_minmax(0,1fr)] md:gap-16">
+          <Reveal className="mx-auto w-52 md:sticky md:top-28 md:w-full">
+            <img src={karenAsset.url} alt="Karen Keller" loading="lazy" className="blob-soft aspect-[4/5] w-full object-cover object-center shadow-soft" />
+            <span className="rule-duo mx-auto mt-5 block h-0.5 w-16 rounded-full" />
+          </Reveal>
+          <div>
           <SectionTitle>Quem sou eu?</SectionTitle>
           <Reveal delay={80}>
             <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -366,6 +417,7 @@ function Index() {
               </AccordionItem>
             </Accordion>
           </Reveal>
+          </div>
         </div>
       </section>
 
@@ -378,9 +430,9 @@ function Index() {
               <Reveal
                 key={s.title}
                 delay={i * 90}
-                className="rounded-3xl bg-card p-8 shadow-soft transition-transform duration-300 hover:-translate-y-1"
+                className="rounded-lg border-t-2 border-rose-soft bg-card p-8 shadow-soft transition-transform duration-300 hover:-translate-y-1"
               >
-                <span className="block h-1 w-10 rounded-full bg-rose-soft" />
+                <span className="rule-duo block h-1 w-10 rounded-full" />
                 <h3 className="mt-5 text-2xl text-foreground">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
               </Reveal>
@@ -390,7 +442,7 @@ function Index() {
       </section>
 
       {/* AVALIAÇÃO */}
-      <section className="bg-rose-soft/30 px-5 py-20 sm:px-8 sm:py-28">
+      <section className="wash-rose px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-3xl">
           <SectionTitle>Avaliação Neuropsicopedagógica</SectionTitle>
           <Reveal delay={80}>
@@ -477,13 +529,13 @@ function Index() {
       </section>
 
       {/* MAPEAMENTO CEREBRAL */}
-      <section className="bg-teal-soft/25 px-5 py-20 sm:px-8 sm:py-28">
+      <section className="wash-teal px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <SectionTitle>Mapeamento Cerebral</SectionTitle>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {MAPEAMENTO.map((m, i) => (
-              <Reveal key={m.q} delay={i * 80} className="rounded-3xl bg-background p-7 shadow-soft">
-                <h3 className="text-xl text-foreground">{m.q}</h3>
+              <Reveal key={m.q} delay={i * 80} className="rounded-lg border-t-2 border-rose-soft bg-background p-7 shadow-soft transition-transform duration-300 hover:-translate-y-1">
+                <h3 className="text-xl text-rose">{m.q}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.a}</p>
               </Reveal>
             ))}
@@ -511,7 +563,7 @@ function Index() {
               <Reveal
                 key={s.t}
                 delay={(i % 3) * 80}
-                className="rounded-2xl bg-card p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1"
+                className={`rounded-lg border-l-2 ${i % 2 ? "border-teal" : "border-rose"} bg-card p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1`}
               >
                 <h3 className="text-lg leading-snug text-foreground">{s.t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
@@ -522,7 +574,7 @@ function Index() {
       </section>
 
       {/* FAMÍLIA E ESCOLA */}
-      <section className="bg-rose-soft/30 px-5 py-20 sm:px-8 sm:py-28">
+      <section className="wash-rose px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           <Reveal className="rounded-3xl bg-background p-8 shadow-soft">
             <h3 className="text-2xl text-foreground">Para a família</h3>
@@ -553,7 +605,7 @@ function Index() {
               <Reveal
                 key={p}
                 delay={i * 70}
-                className="rounded-2xl bg-teal-soft/40 px-4 py-8 font-display text-xl text-foreground"
+                className={`rounded-lg px-4 py-8 font-display text-xl text-foreground ${i % 2 ? "bg-rose-soft/35" : "bg-teal-soft/40"}`}
               >
                 {p}
               </Reveal>
@@ -568,9 +620,30 @@ function Index() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="wash-rose px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto max-w-3xl">
+          <SectionTitle>Perguntas frequentes</SectionTitle>
+          <Reveal delay={80}>
+            <Accordion type="single" collapsible className="mt-10 divide-y divide-border border-y border-border">
+              {FAQ.map((item, i) => (
+                <AccordionItem key={item.question} value={`faq-${i}`} className="border-none px-1">
+                  <AccordionTrigger className="py-5 text-left font-display text-lg text-foreground hover:text-rose hover:no-underline sm:text-xl">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="max-w-2xl pb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="px-5 pb-20 sm:px-8 sm:pb-28">
-        <Reveal className="mx-auto max-w-4xl rounded-[2.5rem] bg-teal-soft/50 px-6 py-16 text-center sm:px-16">
+        <Reveal className="wash-teal mx-auto max-w-4xl rounded-lg px-6 py-16 text-center sm:px-16">
           <h2 className="mx-auto max-w-2xl text-3xl leading-tight text-foreground sm:text-4xl">
             Vamos compreender melhor suas necessidades?
           </h2>
@@ -584,7 +657,7 @@ function Index() {
       </section>
 
       {/* CONTATO */}
-      <section className="px-5 pb-20 sm:px-8 sm:pb-28">
+      <section id="contato" className="px-5 pb-20 sm:px-8 sm:pb-28">
         <div className="mx-auto max-w-3xl">
           <SectionTitle>Entre em contato</SectionTitle>
           <Reveal delay={80} className="mt-8 rounded-3xl bg-card p-8 shadow-soft">
@@ -611,12 +684,6 @@ function Index() {
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  Endereço
-                </dt>
-                <dd className="mt-1 text-foreground">Rua Doraci de Andrade, Garopaba</dd>
-              </div>
-              <div>
-                <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                   Instagram
                 </dt>
                 <dd className="mt-1">
@@ -636,23 +703,30 @@ function Index() {
       </section>
 
       {/* RODAPÉ */}
-      <footer className="border-t border-border px-5 py-12 sm:px-8">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 text-center">
-          <img src={logoAsset.url} alt="Clínica Alegremente" className="h-10 w-auto" />
-          <p className="text-sm text-muted-foreground">Karen Keller — Neuropsicopedagoga</p>
-          <div className="flex gap-6 text-sm">
-            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-teal">
-              Instagram
-            </a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-teal">
-              WhatsApp
-            </a>
-            <a href="mailto:karen.keller78@gmail.com" className="text-teal">
-              E-mail
-            </a>
+      <footer className="wash-teal border-t border-border px-5 py-12 sm:px-8">
+        <div className="mx-auto grid max-w-5xl gap-10 sm:grid-cols-3">
+          <div>
+            <img src={logoAsset.url} alt="Clínica Alegremente" className="h-11 w-auto" />
+            <p className="mt-5 font-display text-lg text-foreground">Karen Keller</p>
+            <p className="text-sm text-muted-foreground">Neuropsicopedagoga</p>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">Compreender a aprendizagem é também compreender cada pessoa.</p>
           </div>
-          <p className="text-xs text-muted-foreground">Clínica Alegremente © 2026</p>
-          <p className="text-xs text-muted-foreground">
+          <nav aria-label="Links do rodapé" className="flex flex-col items-start gap-2 text-sm">
+            <p className="mb-2 font-medium text-foreground">Links</p>
+            {[...NAV.slice(0, 4), { label: "FAQ", href: "#faq" }, { label: "Contato", href: "#contato" }].map((item) => (
+              <a key={item.href} href={item.href} className="text-muted-foreground transition-colors hover:text-rose">{item.label}</a>
+            ))}
+          </nav>
+          <div className="flex flex-col items-start gap-2 text-sm">
+            <p className="mb-2 font-medium text-foreground">Contato</p>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">WhatsApp</a>
+            <a href="mailto:karen.keller78@gmail.com" className="text-muted-foreground transition-colors hover:text-teal">E-mail</a>
+            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-teal">Instagram</a>
+          </div>
+        </div>
+        <div className="mx-auto mt-12 flex max-w-5xl flex-col gap-2 border-t border-border pt-5 text-xs text-muted-foreground sm:flex-row sm:justify-between">
+          <p>Clínica Alegremente © 2026</p>
+          <p>
             criado com ❤️ por{" "}
             <a
               href="https://dufrimeunegocio.com.br/"
@@ -665,6 +739,14 @@ function Index() {
           </p>
         </div>
       </footer>
+      <div className="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-2 sm:bottom-6 sm:right-6">
+        <span className="rounded-lg border border-border bg-background px-3 py-2 text-xs text-foreground shadow-soft">Como posso te ajudar?</span>
+        <Button asChild size="icon" className="size-12 rounded-full bg-teal text-foreground shadow-soft transition-transform duration-300 hover:-translate-y-1 hover:bg-teal/80" title="Conversar pelo WhatsApp">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
+            <WhatsAppIcon className="size-6" />
+          </a>
+        </Button>
+      </div>
     </div>
   );
 }
