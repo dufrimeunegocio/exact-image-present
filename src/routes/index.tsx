@@ -11,7 +11,7 @@ import {
 import { Reveal } from "@/components/Reveal";
 import logoAsset from "@/assets/karen-keller-logo.png.asset.json";
 import karenAsset from "@/assets/karen.jpg.asset.json";
-import karenAsset from "@/assets/karen-keller-atendendo.jpeg";
+import KarenSobre from "@/assets/karen-keller-atendendo.jpeg";
 
 
 const WHATSAPP = "https://wa.me/5548974008889";
