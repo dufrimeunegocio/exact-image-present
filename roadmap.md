@@ -4,3 +4,5 @@
 - [x] Apply the uploaded surgical refinements to the hero button, about alignment, evaluation, mapping, final contact invitation, contact, and footer.
 - [x] Verify the specified sections on desktop and mobile without changing the rest of the page.
 - [x] Verify mobile/tablet hero alignment, about order, contact heading, footer changes, and unchanged desktop at multiple widths.
+- [x] Correct the new About image import and preserve the existing Hero image.
+- [x] Verify the page loads and both images render correctly on desktop and mobile.
