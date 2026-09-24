@@ -339,12 +339,12 @@ function Index() {
 
       {/* SOBRE */}
       <section id="sobre" className="wash-about px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] lg:gap-14">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] lg:items-stretch lg:gap-14">
           <Reveal className="order-2 mx-auto w-60 sm:w-72 lg:order-1 lg:w-full">
              <img src={karenSobre} alt="Karen Keller em atendimento neuropsicopedagógico" loading="lazy" className="h-auto w-full rounded-2xl shadow-soft" />
             <span className="rule-duo mx-auto mt-5 block h-0.5 w-16 rounded-full" />
           </Reveal>
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 lg:flex lg:h-full lg:flex-col lg:justify-center lg:rounded-2xl lg:bg-background lg:p-10 lg:shadow-soft">
           <SectionTitle>Quem sou eu?</SectionTitle>
           <Reveal delay={80}>
             <p className="mt-6 leading-relaxed text-muted-foreground">
