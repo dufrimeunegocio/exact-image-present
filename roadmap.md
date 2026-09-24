@@ -5,4 +5,4 @@
 - [x] Verify the specified sections on desktop and mobile without changing the rest of the page.
 - [x] Verify mobile/tablet hero alignment, about order, contact heading, footer changes, and unchanged desktop at multiple widths.
 - [x] Correct the new About image import and preserve the existing Hero image.
-- [ ] Verify the page loads and both images render correctly on desktop and mobile.
+- [x] Verify the page loads and both images render correctly on desktop and mobile.
