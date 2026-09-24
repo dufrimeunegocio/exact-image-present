@@ -341,7 +341,7 @@ function Index() {
       <section id="sobre" className="wash-about px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[minmax(300px,0.85fr)_minmax(0,1fr)] lg:gap-14">
           <Reveal className="order-2 mx-auto w-60 sm:w-72 lg:order-1 lg:w-full">
-            <img src={karenAsset.url} alt="Karen Keller" loading="lazy" className="blob-soft aspect-[4/5] w-full object-cover object-center shadow-soft" />
+            <img src={karenAtendendoAsset.url} alt="Karen Keller" loading="lazy" className="blob-soft aspect-[4/5] w-full object-cover object-center shadow-soft" />
             <span className="rule-duo mx-auto mt-5 block h-0.5 w-16 rounded-full" />
           </Reveal>
           <div className="order-1 lg:order-2">
